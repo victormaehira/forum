@@ -1,4 +1,4 @@
-package br.com.forum.servlet;
+package br.com.forum.command;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.forum.bean.Usuario;
-import br.com.forum.command.Command;
 import br.com.forum.dao.UsuarioDAO;
 import br.com.forum.dao.UsuarioDAOImpl;
 

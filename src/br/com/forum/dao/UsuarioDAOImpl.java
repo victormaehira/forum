@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +15,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	private final String INSERT = "INSERT INTO usuario(login, email, nome, senha, pontos) VALUES (?, ?, ?, ?, ?)";
 	private final String SELECT_BY_LOGIN = "SELECT * FROM usuario WHERE login = ?";
 	private final String SELECT_ALL = "SELECT * FROM usuario ORDER BY pontos DESC";
-	private final String UPDATE_PONTOS = "UPDATE usuario SET pontos = ? WHERE login = ?";
+	private final String UPDATE_PONTOS = "UPDATE usuario SET pontos = pontos + ? WHERE login = ?";
 	private final String LOGIN = "SELECT * FROM usuario WHERE login = ? and senha = ?";
 
 	public UsuarioDAOImpl(Connection connection) {
@@ -60,10 +59,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	@Override
 	public void adicionarPontos(String login, int pontos) {
 		try {
-			Usuario usuario = recuperar(login);
-			int total = pontos + usuario.getPontos();
 			PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PONTOS);
-			preparedStatement.setInt(1, total);
+			preparedStatement.setInt(1, pontos);
 			preparedStatement.setString(2, login);
 			preparedStatement.executeUpdate();
 			preparedStatement.close();

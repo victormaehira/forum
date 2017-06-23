@@ -1,6 +1,7 @@
 package br.com.forum.servlet;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -27,7 +28,9 @@ public class Login extends ServletBD {
 			throws ServletException, IOException {
 		Command loginCommand = new LoginCommand();
 		try {
-			loginCommand.execute(request, response, getConnection());
+			Connection connection = getConnection();
+			loginCommand.execute(request, response, connection);
+			connection.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
