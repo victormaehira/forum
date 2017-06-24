@@ -13,11 +13,11 @@
 <a href="${pageContext.request.contextPath}/Controller?action=RANKING">Ranking</a><br><br>
 <table border="1">
 	<tr>
-		<td><b>TÓPICO</b></td><td><b>USUÁRIO</b></td>
+		<td><b>TÓPICO</b></td><td><b>NOME</b></td>
 	</tr>
 	<c:forEach items="${topicos}" var="topico">
 		<tr>
-	    	<td><a href="${pageContext.request.contextPath}/Controller?action=EXIBE_TOPICO&id_topico=${topico.id_topico}">${topico.titulo}</a></td><td>${topico.login}</td>
+	    	<td><a href="${pageContext.request.contextPath}/Controller?action=EXIBE_TOPICO&id_topico=${topico.id_topico}">${topico.titulo}</a></td><td>${topico.nomeUsuario}</td>
 	    </tr>
 	</c:forEach>
 	

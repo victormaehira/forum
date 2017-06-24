@@ -5,6 +5,7 @@ public class Comentario {
 	private String comentario;
 	private String login;
 	private Integer id_topico;
+	private String nomeUsuario;
 
 	public Integer getId_comentario() {
 		return id_comentario;
@@ -36,5 +37,13 @@ public class Comentario {
 
 	public void setId_topico(Integer id_topico) {
 		this.id_topico = id_topico;
+	}
+
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
+
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
 }

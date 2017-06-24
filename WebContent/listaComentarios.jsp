@@ -17,11 +17,11 @@ Autor: ${autor.nome}<br><br>
 
 <table border="1">
 	<tr>
-		<td><b>Comentário</b></td><td><b>USUÁRIO</b></td>
+		<td><b>COMENTÁRIO</b></td><td><b>NOME DO AUTOR</b></td>
 	</tr>
 	<c:forEach items="${comentarioList}" var="item">
 		<tr>
-	    	<td>${item.comentario}</td><td>${item.login}</td>
+	    	<td>${item.comentario}</td><td>${item.nomeUsuario}</td>
 	    </tr>
 	</c:forEach>
 	

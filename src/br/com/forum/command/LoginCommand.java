@@ -34,6 +34,10 @@ public class LoginCommand implements Command {
 				request.getSession(true).setAttribute("usuario", usuario);
 			}
 			topicos = topicoDAO.getTopicos();
+			for (Topico topico: topicos) {
+				Usuario autor = usuarioDao.recuperar(topico.getLogin());
+				topico.setNomeUsuario(autor.getNome());
+			}
 		} catch (SQLException | UsuarioNotFoundException e) {
 			request.setAttribute("mensagem", "Erro ao logar");
 			nextPage = "index.jsp";

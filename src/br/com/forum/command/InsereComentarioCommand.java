@@ -41,6 +41,10 @@ public class InsereComentarioCommand implements Command {
 			autor = usuarioDAO.recuperar(topico.getLogin());
 			usuarioDAO.adicionarPontos(usuario.getLogin(), 3);
 			comentarioList = comentarioDAO.getComentariosByTopico(Integer.parseInt(id_topico));
+			for (Comentario item: comentarioList) {
+				Usuario comentarista = usuarioDAO.recuperar(topico.getLogin());
+				item.setNomeUsuario(comentarista.getNome());
+			}
 		} catch (NumberFormatException | SQLException e) {
 			e.printStackTrace();
 		}

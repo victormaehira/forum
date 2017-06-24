@@ -5,6 +5,7 @@ public class Topico {
 	private String titulo;
 	private String conteudo;
 	private String login;
+	private String nomeUsuario;
 	public Topico(Integer id_topico, String titulo, String conteudo, String login) {
 		super();
 		this.id_topico = id_topico;
@@ -38,5 +39,11 @@ public class Topico {
 	}
 	public void setLogin(String login) {
 		this.login = login;
+	}
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
 }
