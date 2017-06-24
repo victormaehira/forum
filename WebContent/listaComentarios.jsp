@@ -12,6 +12,7 @@
 Título: ${topico.titulo}<br><br>
 Conteúdo: ${topico.conteudo}<br><br>
 Autor: ${autor.nome}<br><br>
+<a href="${pageContext.request.contextPath}/Controller?action=EXIBE_TOPICOS">Voltar para tela de tópicos</a><br><br>
 <h3>Comentários</h3>
 
 <table border="1">

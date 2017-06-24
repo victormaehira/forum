@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.forum.command.CadastrarCommand;
 import br.com.forum.command.Command;
 import br.com.forum.command.ExibeTopicoCommand;
+import br.com.forum.command.ExibeTopicosCommand;
 import br.com.forum.command.InsereComentarioCommand;
 import br.com.forum.command.InsereTopicoCommand;
 import br.com.forum.command.LoginCommand;
@@ -24,6 +25,7 @@ public class Controller extends ServletBD {
 	private final String INSERE_TOPICO = "INSERE_TOPICO";
 	private final String INSERE_COMENTARIO = "INSERE_COMENTARIO";
 	private final String EXIBE_TOPICO = "EXIBE_TOPICO";
+	private final String EXIBE_TOPICOS = "EXIBE_TOPICOS";
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -58,6 +60,9 @@ public class Controller extends ServletBD {
 		}
 		if (INSERE_COMENTARIO.equals(action)) {
 			return new InsereComentarioCommand();
+		}
+		if (EXIBE_TOPICOS.equals(action)) {
+			return new ExibeTopicosCommand();
 		}
 		return new LoginCommand();
 	}

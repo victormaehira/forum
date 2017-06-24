@@ -15,11 +15,13 @@
 
 <table border="1">
 	<tr>
-		<td><b>USUÁRIO</b></td><td><b>PONTOS</b></td>
+		<td>POSIÇÃO</td><td><b>USUÁRIO</b></td><td><b>PONTOS</b></td>
 	</tr>
+	<c:set var="count" value="${0}" /> 
 	<c:forEach items="${usuarios}" var="usuario">
+		<c:set var="count" value="${count+1}" />
 		<tr>
-	    	<td>${usuario.nome}</td><td>${usuario.pontos}</td>
+	    	<td>${count}</td><td>${usuario.nome}</td><td>${usuario.pontos}</td>
 	    </tr>
 	</c:forEach>
 	
