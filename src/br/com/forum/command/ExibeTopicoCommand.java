@@ -38,7 +38,7 @@ public class ExibeTopicoCommand implements Command {
 			autor = usuarioDAO.recuperar(topico.getLogin());
 			comentarioList = comentarioDAO.getComentariosByTopico(Integer.parseInt(id_topico));
 			for (Comentario comentario: comentarioList) {
-				Usuario comentarista = usuarioDAO.recuperar(topico.getLogin());
+				Usuario comentarista = usuarioDAO.recuperar(comentario.getLogin());
 				comentario.setNomeUsuario(comentarista.getNome());
 			}
 		} catch (NumberFormatException | SQLException e) {

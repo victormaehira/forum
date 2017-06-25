@@ -34,6 +34,10 @@ public class InsereTopicoCommand implements Command {
 			topicoDAO.insereTopico(titulo, conteudo, usuario.getLogin());
 			usuarioDAO.adicionarPontos(usuario.getLogin(), 10);
 			topicos = topicoDAO.getTopicos();
+			for (Topico topico: topicos) {
+				Usuario autor = usuarioDAO.recuperar(topico.getLogin());
+				topico.setNomeUsuario(autor.getNome());
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			request.setAttribute("mensagem", "Erro ao cadastrar tópico");

@@ -42,7 +42,7 @@ public class InsereComentarioCommand implements Command {
 			usuarioDAO.adicionarPontos(usuario.getLogin(), 3);
 			comentarioList = comentarioDAO.getComentariosByTopico(Integer.parseInt(id_topico));
 			for (Comentario item: comentarioList) {
-				Usuario comentarista = usuarioDAO.recuperar(topico.getLogin());
+				Usuario comentarista = usuarioDAO.recuperar(item.getLogin());
 				item.setNomeUsuario(comentarista.getNome());
 			}
 		} catch (NumberFormatException | SQLException e) {
