@@ -1,0 +1,5 @@
+<dataset>
+	<USUARIO login="joao" nome="joao silva" email ="joao@gmail.com" senha="senha" pontos="0"/>
+	<TOPICO login="joao" titulo="XPTO" conteudo="Nada Consta"/>
+	<COMENTARIO comentario="LEROLERO" login="joao"/>
+</dataset>

@@ -14,6 +14,7 @@ public class TopicoDAO {
 	private final String SELECT_ALL = "select * from topico";
 	private final String INSERT = "insert into topico(id_topico, titulo, conteudo, login) values (nextval('topico_id_topico_seq'), ?, ?, ?)";
 	private final String SELECT_BY_ID = "select * from topico where id_topico = ?";
+	private String DELETE = "DELETE FROM TOPICO";
 	
 	public TopicoDAO(Connection connection) {
 		this.connection = connection;
@@ -55,5 +56,11 @@ public class TopicoDAO {
 			topico.setLogin(resultSet.getString("login"));
 		}
 		return topico;
+	}
+	
+	public void clean() throws SQLException {
+		PreparedStatement preparedStatement = connection.prepareStatement(DELETE);
+		preparedStatement.executeUpdate();
+		preparedStatement.close();
 	}
 }

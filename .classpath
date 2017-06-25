@@ -32,5 +32,11 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar"/>
 	<classpathentry kind="lib" path="C:/java/apache-tomcat-8.0.44/lib/postgresql-42.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/dbunit-2.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-ext-1.7.25.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

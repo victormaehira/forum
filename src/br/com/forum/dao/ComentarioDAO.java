@@ -13,6 +13,7 @@ public class ComentarioDAO {
 	private Connection connection;
 	private String INSERT = "insert into comentario (id_comentario, comentario, login, id_topico) values (nextval('comentario_id_comentario_seq'), ?, ?, ?)";
 	private String SELECT_BY_TOPICO = "select * from comentario where id_topico = ?";
+	private String DELETE = "DELETE FROM COMENTARIO";
 	
 	public ComentarioDAO (Connection connection) {
 		this.connection = connection;
@@ -26,7 +27,7 @@ public class ComentarioDAO {
 		preparedStatement.executeUpdate();
 		preparedStatement.close();
 	}
-	
+
 	public List<Comentario> getComentariosByTopico(Integer id_topico) throws SQLException {
 		List<Comentario> list = new ArrayList<Comentario>();
 		PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_TOPICO);
@@ -40,7 +41,12 @@ public class ComentarioDAO {
 			comentario.setComentario(resultSet.getString("comentario"));
 			list.add(comentario);
 		}
-
 		return list;
+	}
+	
+	public void clean() throws SQLException {
+		PreparedStatement preparedStatement = connection.prepareStatement(DELETE);
+		preparedStatement.executeUpdate();
+		preparedStatement.close();
 	}
 }
