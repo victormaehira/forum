@@ -15,7 +15,7 @@ Senha <input name="senha" type=password><br>
 &nbsp;&nbsp;<a href="${pageContext.request.contextPath}/cadastro.jsp">Novo Cadastro</a>
 </form>
 <br>
-${mensagem}
+<h5>${mensagem}</h5>
 <br><br><br>
 <table>
 	<tr>
